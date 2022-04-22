@@ -1,0 +1,48 @@
+{% extends 'partials/base.html' %}
+
+		{%block title %} List Predictions {%endblock%}
+
+		{% block content %}
+			<div class="container">
+				<div class="row mt-4">
+					<div class="col-md-8 offset-md-2">
+						
+						<table class="table">
+							<thead>
+							  <tr>
+								<th scope="col">Name</th>
+								<th scope="col">Sbp</th>
+								<th scope="col">Tobacco</th>
+								<th scope="col">Ldl</th>
+								<th scope="col">Adiposity</th>
+								<th scope="col">Famhist</th>
+								<th scope="col">Type</th>
+								<th scope="col">Obesity</th>
+								<th scope="col">Alcohol</th>
+								<th scope="col">Age</th>
+								<th scope="col">Prediction</th>
+							  </tr>
+							</thead>
+							<tbody>
+							  {% for data in predicted_cardiac%}
+							  <tr>
+								<th scope="row">{{data.name}}</th>
+								<td>{{data.sbp}}</td>
+								<td>{{data.tobacco}}</td>
+								<td>{{data.ldl}}</td>
+								<td>{{data.adiposity}}</td>
+								<td>{{data.famhist}}</td>
+								<td>{{data.type}}</td>
+								<td>{{data.obesity}}</td>
+								<td>{{data.alcohol}}</td>
+								<td>{{data.age}}</td>		
+								<td>{{data.predictions}}</td>
+							  </tr>
+							  {% endfor %}
+							</tbody>
+						  </table>
+
+					</div>
+				</div>
+			</div>
+		{%endblock%}
